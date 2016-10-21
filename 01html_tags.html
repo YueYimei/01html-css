@@ -1,0 +1,191 @@
+<!-- doctype有strict transitional frameset三种类型 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<!-- 字符集还有gb2312（gbk），只有中文的小字符集，保存时要注意和文本字符集保持一致，否则乱码 -->
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<!-- 描述和关键字是用来做搜索引擎优化SEO的 -->
+	<meta name="Description" content="网易是中国领先的互联网技术公司，为用户提供免费邮箱、游戏、搜索引擎服务，开设新闻、娱乐、体育等30多个内容频道，及博客、视频、论坛等互动交流，网聚人的力量。" />
+	<meta name="Keywords" content="网易,邮箱,游戏,新闻,体育,娱乐,女性,亚运,论坛,短信" />
+	<!-- title是网页标题，也有助于SEO -->
+	<title>html标签们</title>
+</head>
+<body>
+
+<!-- html不识别空格换行tab，这些在文字之间都被折叠为一个空格显示 -->
+<p id="head">我是一个带空   格换
+行	Tab的文本</p>
+
+<!-- name在a标签里面可以实现锚点，p标签不可以 -->
+<!-- p标签里面的id也可以实现锚点 -->
+<a name="head2">我是name锚点</a>
+
+<!-- 标签必须严格封闭！ -->
+<p>我是一个封闭的p标签</p>
+
+<!-- p标签只能放文本，不能放其他标签，浏览器会自动闭合p标签 -->
+<p>我是一个段落
+	<h1>我是一个标题</h1>
+</p>
+
+<!-- img是自闭合单标签，alt是图片不显示时的代替文字 -->
+<img src="images/12.02.49.png" alt="红花小树" />
+
+<!-- 相对路径，../表示上一级目录 -->
+<img src="../images/IMG_0049.jpg"  alt="我是代替图片的文字"/><br />
+
+<!-- a标签的基本构成 -->
+<a href="../php/day2/temp.html">我是一个a 链接html</a><br />
+<a href="../php/day5/page1.php">我是一个a 链接PHP</a><br />
+
+<!-- title鼠标悬停文本，_blank在新页面打开，默认在当前页面打开 -->
+<a href="../php/day5/page1.php" title="page1.php" target="_blank">完整链接</a><br />
+
+<!-- 锚点实现跳转指定位置的功能 ,#**可以是a的name或者id-->
+<a href="01html_tags.html#head">跳到开头id</a>
+<!-- 本页面锚点可以省略#前部分 -->
+<a href="#head2">跳到开头name</a>
+
+<!-- ul是无序列表，li是列表项，语义为列表，必须搭配使用，li不能单独存在，ul里面只能放li -->
+<!-- 默认样式有小圆点，导航条通常是无序列表 -->
+<ul>我喜欢的动漫
+	<li>海贼王</li>
+	<li>夏目友人帐</li>
+	<li>元气少女缘结神</li>
+</ul>
+<!-- li是容器级标签，里面什么都可以放，也可以再放一层ul -->
+<ul>动漫详解
+	<li>海贼王
+		<h4>草帽一家</h4>
+		<p>由路飞领头，剑客佐罗，厨师山治，航海士娜美</p>
+	</li>
+	<li>夏目友人帐</li>
+	<li>元气少女缘结神
+		<ul>
+			<li>奈奈生</li>
+			<li>巴卫</li>
+			<li>鞍马</li>
+		</ul>
+	</li>
+</ul>
+
+<!-- ol是有序列表，li默认样式有数字序号，和ul语义不同，用法一样-->
+<ol>喜欢的书排行ol
+	<li>三体</li>
+	<li>哈利波特</li>
+	<li>暮光之城</li>
+</ol>
+<!-- ol使用不多，如果想表达顺序，也可以用ul -->
+<ul>喜欢的书排行ul
+	<li>1. 三体</li>
+	<li>2. 哈利波特</li>
+	<li>3. 暮光之城</li>
+</ul>
+
+<!-- dl定义列表，dt定义标题，dd定义表述词，表达两层语义，每个dt有自己的dd -->
+<!-- dl里面只能有dt dd，dt dd只能在dl里面 -->
+<dl>我的喜好
+	<dt>动漫</dt>
+	<dd>海贼王</dd>
+	<dd>夏目</dd>
+	
+	<dt>书籍</dt>
+	<dd>三体</dd>
+	<dd>暮光</dd>
+	<dd>哈利</dd>
+	
+	<dt>音乐</dt>
+	<dd>周杰伦</dd>
+</dl>
+<!-- dl里面可以有多个dt和dd，为了清晰也可以只放一组dt和dd -->
+<dl>我喜欢的
+	<dt>动漫</dt>
+	<dd>海贼王</dd>
+</dl>
+<dl>我喜欢的
+	<dt>书籍</dt>
+	<dd>三体</dd>
+</dl>
+<dl>我喜欢的
+	<dt>音乐</dt>
+	<dd>周杰伦</dd>
+</dl>
+
+<!-- div语义是分割，里面放大东西，span语义是跨度范围，里面放小元素 -->
+<!-- div里面什么都可以放，也可以再放div -->
+<div>我是一个div</div>
+<!-- span是文本级标签，只能放文字 图片 表单元素，不能放p、h、ul、dl、ol、div -->
+<span>我是一个span</span>
+<!-- div是重要的布局标签，div+css 前者负责布局，后者负责样式 -->
+
+<!-- 表单内容都要写在form里面，action表示表单提交到哪里，method表示提交的HTTP方式 -->
+<form action="#" method="post">表单区域</form>
+
+<!-- 自封闭标签 meta img input -->
+<!-- 文本框 input 输入 type 类型 text 文本 value 默认值 -->
+用户名：<input type="text" value="请输入..." />
+<br />
+<!-- 密码框 input由type来决定-->
+密码:<input type="password" />
+<br />
+<!-- 单选按钮 天生互斥，必须设置相同的name才能实现互斥 -->
+<input type="radio" name="sex" checked="checked"/>男
+<input type="radio" name="sex" />女
+<br />
+<!-- 复选框 可以多选，也要求必须设置相同的name -->
+<input type="checkbox" name="aihao"  />篮球
+<input type="checkbox" name="aihao" />足球
+<input type="checkbox" name="aihao" />排球
+<input type="checkbox" name="aihao" checked="checked"/>网球
+<input type="checkbox" name="aihao" />冰球
+<input type="checkbox" name="aihao" />乒乓球
+<br />
+<!-- 下拉列表 select选择 option选项 -->
+<select>
+	<option>北京</option>
+	<option>河北</option>
+	<option>山东</option>
+	<option>湖北</option>
+	<option>浙江</option>
+</select>
+<br />
+<!-- 多行文本框也叫文本域 cols列数 rows行数-->
+<!-- 标签对里面不用写东西，写了就是默认值 -->
+<textarea cols="30" rows="10">请输入内容</textarea>
+<br />
+<!-- 普通按钮 value是按钮上得文字 -->
+<input type="button" value="普通按钮" />
+<!-- 提交按钮，不需要value按钮上就有提交的字样 -->
+<input type="submit" value="我是提交按钮" />
+<!-- 重置按钮 -->
+<input type="reset" />
+<br />
+<!-- label标签 和input绑定使用 -->
+<input type="radio" name="sex" id="nan" /><label for="nan">男</label>
+<input type="radio" name="sex" id="nv" /><label for="nv">女</label>
+<br />
+
+<!-- 字符实体	 -->
+<p>我是一个大于号&gt</p>
+<p>我是一个小于号&lt</p>
+<p>我是一个版权符号&copy</p>
+<p>我是三个&nbsp&nbsp&nbsp空格</p>
+
+<!-- 废弃的HTML标签 有样式在里面 已经用CSS代替-->
+<font size="9" color="red">哈哈</font>
+<b>加粗</b>
+	<u>下划线</u>
+	<i>倾斜</i>
+    <del>删除线</del>
+	<em>强调</em>
+	<strong>强调</strong>	
+
+<!-- 水平线 -->
+<hr />
+
+<!-- 换行 少用 大部分情况需要用p标签另起段落-->
+<br />	
+
+<!-- 标准div+css页面 常用标签div  p  h1  span   a   img   ul   ol    dl    input -->
+
+</html>
